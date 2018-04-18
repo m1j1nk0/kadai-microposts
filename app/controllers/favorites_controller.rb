@@ -1,4 +1,4 @@
-class LikesController < ApplicationController
+class FavoritesController < ApplicationController
   def create
     like = Micropost.find(params[:micropost_id])
     current_user.make_favorite(like)

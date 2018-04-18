@@ -12,13 +12,14 @@ Rails.application.routes.draw do
     member do
       get :followings
       get :followers
-      get :favorites
+      
     end
-    
-
   end
 
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
-  resources :likes, only: [:create, :destroy, :index]
+
+  get :likes, to: "favorites#index"
+  resources :favorites, only: [:create, :destroy]
+  
 end

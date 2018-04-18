@@ -68,7 +68,7 @@ class UsersController < ApplicationController
   def favorites
     
     @user = current_user
-    @favorites = @user.hogehoges.page(params[:page])
+    @favorites = @user.favolite_tweets.page(params[:page])
     counts(@user)
   end
   
